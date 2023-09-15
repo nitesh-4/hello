@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
   // Your webhook secret from Razorpay Dashboard
-  const secret = 'yourRazorpayWebhookSecret';
+  const secret = 'padhae';
 
   // The Razorpay signature in the request header
   const signature = req.headers['x-razorpay-signature'];
