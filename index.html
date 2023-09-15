@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Razorpay Payment Button Demo</title>
+</head>
+<body>
+
+  <h1>Welcome to My Store</h1>
+
+  <p>Click the button below to make a payment:</p>
+
+  <!-- Razorpay Payment Button -->
+  <form action="">
+
+      <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_McYV1bacDIOmls" async> </script>
+
+  </form>
+  <form action="">
+
+      <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_McYV1bacDIOmls" async> </script>
+
+  </form>
+
+  <script>
+    console.log("inside");
+    // Listen for the 'razorpay_payment_id' event
+    window.addEventListener('razorpay_payment_id', function(event) {
+      // Extract the Payment ID from the event details
+      const paymentId = event.detail.razorpay_payment_id;
+      console.log("between");
+
+      // Log the Payment ID to the console
+      console.log('Payment was successful. Payment ID:', paymentId);
+
+      // TODO: You can send this paymentId to your server for further verification or processing
+      // For example, using fetch API to send it to a server-side endpoint
+      /*
+      fetch('/verify_payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          paymentId: paymentId
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          // Handle success
+        } else {
+          // Handle failure
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      */
+    });
+  </script>
+
+</body>
+</html>
